@@ -82,6 +82,7 @@ export default defineConfig({
           items: [
             { text: '使用docsify搭建个人博客', link: '/tools/docsify-config' },
             { text: 'git的使用', link: '/tools/git-command' },
+            { text: 'hexo的使用', link: '/tools/hexo使用' },
             { text: 'hexo的next主题配置', link: '/tools/hexo-next-theme' },
             { text: 'jsdelivr加速资源', link: '/tools/use-jsdelivr-cdn-hexo-blog' },
           ]
