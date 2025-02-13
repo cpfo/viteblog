@@ -1,7 +1,10 @@
 import { defineConfig } from 'vitepress'
 
+import { withMermaid } from 'vitepress-plugin-mermaid'
+
+
 // https://vitepress.dev/reference/site-config
-export default defineConfig({
+export default withMermaid({
   title: "个人知识库",
   description: "个人知识库，记录工作和学习中遇到的问题，以及知识的积累。",
   lastUpdated: true,
@@ -67,11 +70,12 @@ export default defineConfig({
           ]
         },
         {
-          text: '其他',
+          text: 'java',
           items: [
             { text: 'shardingsphere分库分表', link: '/java/shardingsphere分库分表' },
             { text: '百度uid-generator生成的id变成负数', link: '/java/snowflake-baidu-uid-generator' },
             { text: '使用RateLimiter进行限流', link: '/java/使用RateLimiter进行限流' },
+            { text: 'jdk免登录下载', link: '/java/jdk-download.md' },
           ]
         }
       ],
@@ -84,6 +88,7 @@ export default defineConfig({
             { text: 'git的使用', link: '/tools/git-command' },
             { text: 'hexo的使用', link: '/tools/hexo使用' },
             { text: 'hexo的next主题配置', link: '/tools/hexo-next-theme' },
+            { text: 'vitepress创建博客', link: '/tools/vitepress-build-blog' },
             { text: 'jsdelivr加速资源', link: '/tools/use-jsdelivr-cdn-hexo-blog' },
           ]
         }
@@ -160,5 +165,17 @@ export default defineConfig({
     // socialLinks: [
     //   { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
     // ]
-  }
-})
+  },
+  // optionally, you can pass MermaidConfig
+  mermaid: {
+    // refer https://mermaid.js.org/config/setup/modules/mermaidAPI.html#mermaidapi-configuration-defaults for options
+  },
+  // optionally set additional config for plugin itself with MermaidPluginConfig
+  mermaidPlugin: {
+    class: "mermaid my-class", // set additional css classes for parent container 
+  },
+});
+
+
+
+
