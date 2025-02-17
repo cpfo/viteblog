@@ -153,8 +153,12 @@ export default withMermaid({
       copyright: 'Copyright © 2025-present'
     },
     search: {
-      provider: 'local',
+      provider: 'algolia',
+
       options: {
+        appId: 'AI6V64HIFP',
+        apiKey: '006907fdc19ae2ba1c00449055a2c0b7',
+        indexName: 'cpfoio',
         translations: {
           button: {
             buttonText: '搜索文档',
