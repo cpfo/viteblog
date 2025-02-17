@@ -149,8 +149,8 @@ export default withMermaid({
       "label": '页面导航'
     },
     footer: {
-      message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2025-present'
+      message: 'Released under the <a href="https://github.com/vuejs/vitepress/blob/main/LICENSE">MIT License</a>',
+      copyright: `Copyright © 2025-present` 
     },
     search: {
       provider: 'algolia',
