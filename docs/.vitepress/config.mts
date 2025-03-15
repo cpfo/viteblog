@@ -27,7 +27,8 @@ export default withMermaid({
           { text: 'go', link: '/go/' },
         ]
       },
-      { text: '🛠️工具', link: '/tools/' },
+      { text: '🛠️博客工具', link: '/tools/' },
+      { text: '开发工具', link: '/dev-tools/' },
       {
         text: '🧭导航',
         items: [
@@ -83,11 +84,10 @@ export default withMermaid({
       ],
       '/tools/': [
         {
-          text: '工具',
+          text: '博客工具',
           collapsed: false,
           items: [
             { text: '使用docsify搭建个人博客', link: '/tools/docsify-config' },
-            { text: 'git的使用', link: '/tools/git-command' },
             { text: 'hexo的使用', link: '/tools/hexo使用' },
             { text: 'hexo的next主题配置', link: '/tools/hexo-next-theme' },
             { text: 'vitepress创建博客', link: '/tools/vitepress-build-blog' },
@@ -103,6 +103,18 @@ export default withMermaid({
             { text: 'go环境安装', link: '/go/go环境安装' },
             { text: 'go语言变量和运算符', link: '/go/go语言变量和运算符' },
             { text: 'go语言结构和基础语法', link: '/go/go语言结构和基础语法' },
+          ]
+        }
+      ],
+      '/dev-tools/': [
+        {
+          text: '开发工具',
+          collapsed: false,
+          items: [
+            { text: 'docker的使用', link: '/dev-tools/docker-use' },
+            { text: 'miniconda的使用', link: '/dev-tools/miniconda-use' },
+            { text: 'Vs Code的使用', link: '/dev-tools/VsCode-use' },
+            { text: 'git的使用', link: '/dev-tools/git-command' },
           ]
         }
       ],
