@@ -29,6 +29,13 @@ export default withMermaid({
           { text: 'go', link: '/go/' },
         ]
       },
+      {
+        text: '数据库',
+        items: [
+          { text: 'es', link: '/java/es/es-01-install' },
+          { text: 'db', link: '/db/' },
+        ]
+      },
       { text: '🛠️博客工具', link: '/tools/' },
       { text: '开发工具', link: '/dev-tools/' },
       {
@@ -59,6 +66,7 @@ export default withMermaid({
       '/go/': generateSidebar(docsRoot, 'go'),
       '/tools/': generateSidebar(docsRoot, 'tools'),
       '/dev-tools/': generateSidebar(docsRoot, 'dev-tools'),
+      '/db/': generateSidebar(docsRoot, 'db'),
       
       // 默认侧边栏（根目录下的文档）
       // '/': generateSidebar(docsRoot)

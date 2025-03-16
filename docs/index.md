@@ -8,7 +8,7 @@ titleTemplate: 积累 & 记录
 hero:
   name: "个人知识库"
   text: "积累 & 记录"
-  tagline: 记录工作和学习中遇到的问题，以及知识的积累。
+  tagline: 每个0.1%的持续积累，终将构筑认知护城河。
   actions:
     - theme: brand
       text: Markdown Examples
@@ -21,17 +21,17 @@ hero:
       alt: VitePress
 
 features:
-  - icon: 🚀
-    title: 哈哈
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - icon: 📖
+    title: 沉淀
+    details: 记录今日的学习火花 & 工作洞见
     # link: https://www.baidu.com/
   - icon: ✨
     title: 思考
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    details: 将碎片转化为体系化的认知
     # link: https://www.google.com/
   - icon: ✈️
-    title: 里程碑
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    title: 成长
+    details: 见证量变到质变的跃迁轨迹
     # link: https://www.ai.com/
 ---
 
