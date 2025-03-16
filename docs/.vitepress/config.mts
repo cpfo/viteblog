@@ -2,6 +2,8 @@ import { defineConfig } from 'vitepress'
 
 import { withMermaid } from 'vitepress-plugin-mermaid'
 
+import generateSidebar from './scripts/sidebar'
+const docsRoot = './docs'
 
 // https://vitepress.dev/reference/site-config
 export default withMermaid({
@@ -48,6 +50,22 @@ export default withMermaid({
       }
     ],
 
+
+    sidebar: {
+      // 为不同路径生成侧边栏（支持多组配置）
+      '/example/': generateSidebar(docsRoot, 'example'),
+      '/java/': generateSidebar(docsRoot, 'java'),
+      '/python/': generateSidebar(docsRoot, 'python'),
+      '/go/': generateSidebar(docsRoot, 'go'),
+      '/tools/': generateSidebar(docsRoot, 'tools'),
+      '/dev-tools/': generateSidebar(docsRoot, 'dev-tools'),
+      
+      // 默认侧边栏（根目录下的文档）
+      // '/': generateSidebar(docsRoot)
+    },
+
+
+    /** 
     sidebar: {
       '/example/': [
         {
@@ -61,7 +79,7 @@ export default withMermaid({
       ],
       '/java/': [
         {
-
+   
           text: 'elasticsearch',
           collapsed: false,
           items: [
@@ -148,6 +166,8 @@ export default withMermaid({
         }
       ],
     },
+
+    */
     lastUpdated: {
       text: '最后更新于',
       formatOptions: {

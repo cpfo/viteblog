@@ -1,7 +1,14 @@
+---
+title: docker的安装和使用
+categories: [开发工具]
+tags: [docker]
+date: 2025-03-16 17:20:02
+---
 ## 安装
 
-### 安装 `yum-utils` 包
-（提供 `yum-config-manager` 实用工具），并设置 Docker 的稳定存储库
+### 安装 `yum-utils` 包
+
+（提供 `yum-config-manager` 实用工具），并设置 Docker 的稳定存储库
 
 ```bash
 yum install -y yum-utils 
@@ -28,7 +35,7 @@ sudo systemctl enable docker
 
 > sudo docker run hello-world
 
-若输出 `Hello from Docker!` 则安装成功
+若输出`Hello from Docker!` 则安装成功
 
 ## 更换镜像源, 加速下载
 
@@ -53,6 +60,7 @@ EOF
 sudo systemctl daemon-reload
 sudo systemctl restart docker
 ```
+
 * **验证是否生效**
 
 ```bash
@@ -60,8 +68,6 @@ docker info | grep "Registry Mirrors" -A 10
 ```
 
 若显示配置的镜像地址，则加速成功
-
-
 
 ## 制作docker镜像
 
@@ -71,11 +77,11 @@ docker info | grep "Registry Mirrors" -A 10
 
 **创建项目目录和文件**
 
-新建一个项目目录 `py312`, 然后在该目录下创建 `Dockerfile` 和 `requirements.txt` 文件
+新建一个项目目录 `py312`, 然后在该目录下创建 `Dockerfile` 和 `requirements.txt` 文件
 
-**修改 `requirements.txt` 文件**
+**修改 `requirements.txt` 文件**
 
-在 `requirements.txt` 文件里列出你想要安装的 `pip` 包及其版本（如果有版本要求的话）
+在 `requirements.txt` 文件里列出你想要安装的 `pip` 包及其版本（如果有版本要求的话）
 
 ```bash
 fastapi 
@@ -84,9 +90,9 @@ numpy
 pandas
 ```
 
-**编写 `Dockerfile` 文件**
+**编写 `Dockerfile` 文件**
 
-`Dockerfile` 文件用于定义如何构建 Docker 镜像
+`Dockerfile` 文件用于定义如何构建 Docker 镜像
 
 ```dockerfile
 # 使用官方 Python 基础镜像，这里以 Python 3.12 为例
@@ -130,12 +136,12 @@ def read_root():
 **解释**
 
 -   `FROM python:3.12`：指定使用官方的 Python 3.12 镜像作为基础镜像。
--   `WORKDIR /app`：设定工作目录为 `/app`，后续的操作都会在这个目录下进行。
--   `COPY requirements.txt .`：把当前目录下的 `requirements.txt` 文件复制到工作目录。
--   `RUN pip install --no-cache-dir -r requirements.txt`：在容器内执行 `pip` 命令来安装 `requirements.txt` 里列出的所有包，`--no-cache-dir` 选项可避免缓存占用过多空间。
+-   `WORKDIR /app`：设定工作目录为 `/app`，后续的操作都会在这个目录下进行。
+-   `COPY requirements.txt .`：把当前目录下的 `requirements.txt` 文件复制到工作目录。
+-   `RUN pip install --no-cache-dir -r requirements.txt`：在容器内执行 `pip` 命令来安装 `requirements.txt` 里列出的所有包，`--no-cache-dir` 选项可避免缓存占用过多空间。
 -   `COPY . .`：将当前目录下的所有文件复制到工作目录。
 -   `EXPOSE 8000`：声明容器会监听 8000 端口（依据实际应用的端口进行调整）。
--   `CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]`：定义容器启动时要执行的命令，这里假设使用 `uvicorn` 来运行一个名为 `main` 的 FastAPI 应用。
+-   `CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]`：定义容器启动时要执行的命令，这里假设使用 `uvicorn` 来运行一个名为 `main` 的 FastAPI 应用。
 
 **构建docker镜像**
 
@@ -145,7 +151,7 @@ def read_root():
 docker build -t py312-image  .
 ```
 
-其中，`-t py312-image` 为镜像指定了一个标签，你可以根据需求修改这个标签；`.` 表示使用当前目录作为构建上下文。
+其中，`-t py312-image` 为镜像指定了一个标签，你可以根据需求修改这个标签；`.` 表示使用当前目录作为构建上下文。
 
 **运行docker容器**
 

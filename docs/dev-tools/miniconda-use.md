@@ -1,3 +1,10 @@
+---
+title: miniconda的使用
+categories: [开发工具]
+tags: [miniconda]
+date: 2025-03-16 17:20:02
+---
+
 ## 使用时常用的命令记录
 
 ### 环境管理
