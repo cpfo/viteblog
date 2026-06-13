@@ -14,7 +14,7 @@ function generateSidebar(rootDir, basePath = '') {
 
   return items
     // 过滤隐藏文件和目录（如 .vitepress、node_modules）
-    .filter(item => !item.startsWith('.') && !['node_modules'].includes(item)
+    .filter(item => !item.startsWith('.') && !['node_modules', 'assets'].includes(item)
     && item !== 'index.md')
     // 按文件名数字前缀排序（如 01-Introduction）
     .sort((a, b) => {
