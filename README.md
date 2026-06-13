@@ -10,6 +10,9 @@
 * 构建
 > npm run build
 
+* 运行
+> npm run docs:dev
+
 * 部署
 > 使用的github actions部署，代码提交后会自动build和部署
 
