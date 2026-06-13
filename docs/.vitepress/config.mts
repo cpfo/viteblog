@@ -32,8 +32,10 @@ export default withMermaid({
       {
         text: '数据库',
         items: [
-          { text: '数据库文档', link: '/db/' },
-          { text: 'ES', link: '/db/nosql/elasticsearch/' },
+          { text: 'MySQL', link: '/db/mysql/' },
+          { text: 'MongoDB', link: '/db/mongodb/' },
+          { text: 'Redis', link: '/db/redis/' },
+          { text: 'ES', link: '/db/elasticsearch/' },
         ]
       },
       { text: '🛠️博客工具', link: '/tools/' },
