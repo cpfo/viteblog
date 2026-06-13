@@ -24,13 +24,7 @@ export default withMermaid({
       {
         text: '编程语言',
         items: [
-          {
-            text: 'java',
-            items: [
-              { text: '首页', link: '/java/' },
-              { text: 'ES', link: '/java/es/' },
-            ]
-          },
+          { text: 'java', link: '/java/' },
           { text: 'python', link: '/python/' },
           { text: 'go', link: '/go/' },
         ]
@@ -39,6 +33,7 @@ export default withMermaid({
         text: '数据库',
         items: [
           { text: '数据库文档', link: '/db/' },
+          { text: 'ES', link: '/db/nosql/elasticsearch/' },
         ]
       },
       { text: '🛠️博客工具', link: '/tools/' },
