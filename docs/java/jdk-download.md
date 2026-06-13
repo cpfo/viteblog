@@ -4,5 +4,5 @@
 
 https://gist.github.com/wavezhang/ba8425f24a968ec9b2a8619d7c2d86a6
 
-测试后有效果的是可以从adobe的官网下载。 [coldfusion-downloads.html](https://helpx.adobe.com/coldfusion/kb/coldfusion-downloads.html#downloads3)
+测试后有效果的是可以从adobe的官网下载。 [coldfusion-downloads.html](https://guides.adobe.com/coldfusion/en/docs/troubleshoot-issues/coldfusion-downloads.html#downloads3)
 
