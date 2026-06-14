@@ -4,7 +4,7 @@
 <script setup lang="ts">
 import { Waline } from '@waline/client/component'
 import { computed } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute } from 'vitepress'
 
 import '@waline/client/style'
 
