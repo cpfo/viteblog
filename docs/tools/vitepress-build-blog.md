@@ -244,3 +244,73 @@ flowchart LR
 5. Click on Add deployment branch rule.
 6. Enter the pattern master.
 :::
+
+## 集成 Waline 评论系统
+
+[Waline 官方文档](https://waline.js.org/cookbook/import/project.html)
+
+### 安装依赖
+
+```bash
+npm i -D @waline/client
+```
+
+### 新建评论组件
+
+在 `docs/.vitepress/theme/components/` 下创建 `Waline.vue`：
+
+```vue
+<template>
+  <div ref="walineRef"></div>
+</template>
+<script setup lang="ts">
+import { ref, onMounted, watch } from 'vue'
+import { useRoute } from 'vitepress'
+import { init } from '@waline/client'
+import '@waline/client/style'
+
+const route = useRoute()
+const walineRef = ref<HTMLElement>()
+let instance: ReturnType<typeof init> | null = null
+
+async function initWaline() {
+  instance?.destroy()
+  instance = init({
+    el: walineRef.value!,
+    serverURL: '你的Waline服务端地址',
+    path: route.path,
+  })
+}
+
+onMounted(initWaline)
+watch(() => route.path, initWaline)
+</script>
+```
+
+::: tip
+使用 `init`/`destroy` 手动管理实例生命周期，确保 SPA 路由切换时评论正确刷新。
+:::
+
+### 注册组件
+
+修改 `docs/.vitepress/theme/index.ts`，通过 `doc-after` 插槽在每篇文章后渲染评论：
+
+```ts
+import { h } from 'vue'
+import Theme from 'vitepress/theme'
+import Waline from './components/Waline.vue'
+import './styles.css'
+
+export default {
+  extends: Theme,
+  Layout: () => {
+    return h(Theme.Layout, null, {
+      'doc-after': () => h(Waline),
+    })
+  },
+}
+```
+
+### Waline 服务端部署
+
+参考官方文档 [Waline 快速上手](https://waline.js.org/guide/get-started/) 选择合适的部署方式，部署完成后将 `serverURL` 填入 `Waline.vue` 中。
