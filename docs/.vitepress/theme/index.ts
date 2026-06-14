@@ -1,5 +1,13 @@
+import { h } from 'vue'
 import Theme from 'vitepress/theme'
-// import 'virtual:group-icons.css'
+import Waline from './components/Waline.vue'
 import './styles.css'
 
-export default Theme
+export default {
+  extends: Theme,
+  Layout: () => {
+    return h(Theme.Layout, null, {
+      'doc-after': () => h(Waline),
+    })
+  },
+}
