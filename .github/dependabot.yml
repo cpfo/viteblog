@@ -1,0 +1,14 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    ignore-vulnerabilities:
+      - "GHSA-67mh-4wv8-2f99"   # esbuild
+      - "CVE-2026-53571"         # vite
+      - "CVE-2026-27606"         # rollup
+      - "CVE-2025-66400"         # mdast-util-to-hast
+      - "CVE-2026-4800"          # lodash-es
+      - "GHSA-gvmj-g25r-r7wr"    # dompurify
+      - "CVE-2026-41907"         # uuid

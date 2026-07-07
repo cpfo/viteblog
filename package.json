@@ -1,8 +1,8 @@
 {
   "devDependencies": {
     "@waline/client": "^3.15.2",
-    "mermaid": "^11.4.1",
-    "vitepress": "^1.6.3",
+    "mermaid": "^11.16.0",
+    "vitepress": "^1.6.4",
     "vitepress-plugin-mermaid": "^2.0.17"
   },
   "scripts": {
