@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cpfo.github.io/viteblog/sitemap.xml

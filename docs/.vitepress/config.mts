@@ -11,6 +11,9 @@ export default withMermaid({
   description: "个人知识库，记录工作和学习中遇到的问题，以及知识的积累。",
   lastUpdated: true,
   base: '/viteblog/',
+  sitemap: {
+    hostname: 'https://cpfo.github.io/viteblog/'
+  },
   ignoreDeadLinks: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
