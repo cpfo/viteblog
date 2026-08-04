@@ -4,22 +4,3 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    ignore-vulnerabilities:
-      - "GHSA-67mh-4wv8-2f99"    # esbuild
-      - "CVE-2026-53632"         # vite
-      - "CVE-2026-53571"         # vite
-      - "CVE-2025-46565"         # vite
-      - "CVE-2025-32395"         # vite
-      - "CVE-2025-31486"         # vite
-      - "CVE-2025-31125"         # vite
-      - "CVE-2025-30208"         # vite
-      - "CVE-2026-39365"         # vite
-      - "CVE-2025-62522"         # vite
-      - "CVE-2025-58752"         # vite
-      - "CVE-2025-58751"         # vite
-      - "CVE-2026-27606"         # rollup
-      - "CVE-2025-66400"         # mdast-util-to-hast
-      - "CVE-2026-4800"          # lodash-es
-      - "GHSA-c2j3-45gr-mqc4"    # dompurify
-      - "GHSA-gvmj-g25r-r7wr"    # dompurify
-      - "CVE-2026-41907"         # uuid
